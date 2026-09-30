@@ -1,0 +1,507 @@
+.price-list-container {
+    max-width: 100%;
+    width: 100%;
+    margin: 20px 0;
+    font-family: var(--bm-font-family, "Poppins", sans-serif);
+    box-sizing: border-box;
+    position: relative;
+}
+
+.price-list-container *,
+.price-list-container *::before,
+.price-list-container *::after {
+    box-sizing: border-box;
+}
+
+.bm-corner-logo {
+    position: absolute;
+    top: 8px;
+    right: 0;
+    opacity: 0.12;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.bm-corner-logo img {
+    max-width: 92px;
+    height: auto;
+    display: block;
+}
+
+.price-topbar,
+.accordion-item,
+.price-grid,
+.bm-api-warning,
+.bm-api-error {
+    position: relative;
+    z-index: 2;
+}
+
+.price-topbar {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 28px;
+}
+
+.price-search-wrapper {
+    position: relative;
+    flex: 1 1 auto;
+}
+
+#price-search-input {
+    width: 100%;
+    padding: 14px 52px 14px 22px !important;
+    border: 1px solid var(--bm-border, #9D9D9D) !important;
+    border-radius: 999px !important;
+    outline: none !important;
+    box-shadow: none !important;
+    background: #fff !important;
+    font-family: var(--bm-font-family, "Poppins", sans-serif) !important;
+    font-size: 14px !important;
+    color: #333 !important;
+    min-height: 52px !important;
+    line-height: 1.4 !important;
+    margin: 0 !important;
+}
+
+.search-icon {
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #777;
+    pointer-events: none;
+    line-height: 1;
+}
+
+.search-icon img,
+.search-icon svg {
+    width: 18px;
+    height: 18px;
+    display: block;
+}
+
+.bm-pdf-btn {
+    background: var(--bm-pdf-bg, #A57884);
+    color: var(--bm-pdf-txt, #FFFFFF);
+    border: 1px solid var(--bm-pdf-border, #A57884);
+    border-radius: 999px;
+    padding: 12px 22px;
+    cursor: pointer;
+    font-size: 13px;
+    white-space: nowrap;
+    transition: 0.25s ease;
+    min-height: 52px;
+    font-family: var(--bm-font-family, "Poppins", sans-serif);
+}
+
+.bm-pdf-btn:hover {
+    background: var(--bm-pdf-hover-bg, #8E6671) !important;
+    color: var(--bm-pdf-hover-txt, #FFFFFF) !important;
+    border-color: var(--bm-pdf-hover-bg, #8E6671) !important;
+}
+
+.accordion-item {
+    margin-bottom: var(--bm-spacing, 10px);
+    border: 1px solid var(--bm-border, #9D9D9D);
+    border-radius: 36px;
+    overflow: hidden;
+    background: #fff;
+}
+
+.accordion-header {
+    cursor: pointer;
+    background: #fff;
+    padding: 14px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.25s ease;
+    gap: 14px;
+}
+
+.accordion-header h3 {
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: var(--bm-title-size, 13px) !important;
+    font-weight: 400 !important;
+    color: #2f2f2f !important;
+    line-height: 1.4 !important;
+    font-family: var(--bm-font-family, "Poppins", sans-serif) !important;
+}
+
+.accordion-header.active h3 {
+    color: var(--bm-accent, #A57884) !important;
+}
+
+.plus-icon {
+    width: 18px;
+    height: 18px;
+    transition: transform 0.25s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 18px;
+    line-height: 1;
+    color: #333;
+}
+
+.plus-icon img,
+.plus-icon svg {
+    width: 18px;
+    height: 18px;
+    display: block;
+}
+
+.accordion-header.active .plus-icon {
+    transform: rotate(45deg);
+    color: var(--bm-accent, #A57884);
+}
+
+.accordion-body {
+    display: none;
+    padding: 0 20px 8px;
+}
+
+.price-item-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 0;
+    border-bottom: 1px solid #eeeeee;
+    gap: 18px;
+}
+
+.price-item-row:last-child {
+    border-bottom: none;
+}
+
+.service-info-box {
+    flex: 1 1 auto;
+    min-width: 0;
+    position: relative;
+}
+
+.service-name {
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    color: #333333 !important;
+    line-height: 1.45 !important;
+    margin: 0 !important;
+    font-family: var(--bm-font-family, "Poppins", sans-serif) !important;
+}
+
+.service-description {
+    font-size: 11px !important;
+    color: #888888 !important;
+    margin-top: 4px !important;
+    line-height: 1.55 !important;
+    font-family: var(--bm-font-family, "Poppins", sans-serif) !important;
+}
+
+.price-booking-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.price-pill {
+    background: var(--bm-price-bg, #A57884);
+    color: var(--bm-price-txt, #FFFFFF);
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    min-width: 120px;
+    text-align: center;
+    line-height: 1.2;
+    font-family: var(--bm-font-family, "Poppins", sans-serif) !important;
+}
+
+/* iOS Safari a "39 900 - 55 000" formátumú ártartományt telefonszámnak nézi
+   (Data Detectors), és automatikusan <a href="tel:..."> köré csomagolja.
+   Az így kapott link a téma linkszínét örökli (ugyanaz a bordó, mint a pill
+   háttere), ezért a szám láthatatlanná válik, csak a " Ft" marad meg fehéren.
+   Az alábbi szabály visszakényszeríti az öröklött színt és kikapcsolja
+   a hívás-műveletet. */
+.price-pill a,
+.price-card-price a,
+.bm-print-service-price a,
+.price-list-container a[href^="tel:"] {
+    color: inherit !important;
+    text-decoration: none !important;
+    pointer-events: none;
+    cursor: inherit;
+}
+
+/* A „Csak recepción foglalható” vizsgálatok telefonos gombja (.bm-phone-link)
+   ugyanazt a szabályt kapja, mint a foglalás gomb – így a tipográfiája
+   (betűtípus, méret, vastagság, sormagasság) garantáltan azonos marad. */
+.book-btn,
+.price-list-container a.bm-phone-link[href^="tel:"] {
+    border: 1px solid var(--bm-btn-border, #A57884);
+    color: var(--bm-btn-txt, #A57884) !important;
+    padding: 8px 16px;
+    border-radius: 999px;
+    text-decoration: none !important;
+    font-size: 12px !important;
+    background: transparent;
+    transition: 0.25s ease;
+    white-space: nowrap;
+    line-height: 1.2;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 34px;
+    font-family: var(--bm-font-family, "Poppins", sans-serif) !important;
+}
+
+.book-btn:hover,
+.price-list-container a.bm-phone-link[href^="tel:"]:hover {
+    background: var(--bm-btn-hover-bg, #A57884) !important;
+    color: var(--bm-btn-hover-txt, #FFFFFF) !important;
+    border-color: var(--bm-btn-hover-bg, #A57884) !important;
+}
+
+/* A telefonos gomb kivétele a fenti iOS Data Detectors szabály alól,
+   hogy valóban hívható maradjon. */
+.price-list-container a.bm-phone-link[href^="tel:"] {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+}
+
+/* ── Figyelmeztető „!” jel a vizsgálat neve mellett ──────────────────────
+   A magyarázat hoverre és fókuszra (érintőképernyőn koppintásra) jelenik meg. */
+.bm-phone-notice {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 16px;
+    height: 16px;
+    margin-left: 6px;
+    flex: 0 0 16px;
+    border: 1px solid var(--bm-accent, #A57884);
+    border-radius: 50%;
+    color: var(--bm-accent, #A57884);
+    background: transparent;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    line-height: 1 !important;
+    vertical-align: middle;
+    cursor: help;
+    outline: none;
+    user-select: none;
+    font-family: var(--bm-font-family, "Poppins", sans-serif);
+}
+
+/* A buborék az ikontól JOBBRA nyílik (nem köré középre), így a bal oldali
+   listaelemeknél sem lóg ki a harmonikából és nem vágódik le. */
+.bm-phone-notice::after {
+    content: attr(data-notice);
+    position: absolute;
+    bottom: calc(100% + 9px);
+    left: -10px;
+    right: auto;
+    transform: none;
+    width: max-content;
+    max-width: 260px;
+    padding: 9px 11px;
+    border-radius: 8px;
+    background: #333333;
+    color: #ffffff;
+    font-size: 11px !important;
+    font-weight: 400 !important;
+    line-height: 1.5 !important;
+    text-align: left;
+    white-space: normal;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+    z-index: 20;
+}
+
+/* A buborék nyila */
+.bm-phone-notice::before {
+    content: "";
+    position: absolute;
+    bottom: calc(100% + 3px);
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: #333333;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+    z-index: 20;
+}
+
+.bm-phone-notice:hover::after,
+.bm-phone-notice:focus::after,
+.bm-phone-notice:hover::before,
+.bm-phone-notice:focus::before {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* A harmonika overflow:hidden-je levágná a buborékot, ezért amíg a jel
+   aktív, engedjük kilógni. (Nem támogatott :has() esetén a buborék az
+   első sornál levágódhat – a szöveg ilyenkor is elérhető aria-label-ből.) */
+.accordion-item:has(.bm-phone-notice:hover),
+.accordion-item:has(.bm-phone-notice:focus) {
+    overflow: visible;
+}
+
+.price-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--bm-spacing, 10px);
+}
+
+.price-card {
+    background: #fff;
+    border: 1px solid var(--bm-border, #9D9D9D);
+    border-radius: 16px;
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    min-height: 100%;
+}
+
+.price-card-main {
+    display: block;
+    position: relative;
+}
+
+.price-card-title {
+    margin: 0 !important;
+    font-size: 16px !important;
+    line-height: 1.45 !important;
+    color: #333333 !important;
+    font-weight: 600 !important;
+    font-family: var(--bm-font-family, "Poppins", sans-serif) !important;
+}
+
+.price-card-info {
+    font-size: 11px !important;
+    color: #777777 !important;
+    margin: 10px 0 16px !important;
+    line-height: 1.6 !important;
+    font-family: var(--bm-font-family, "Poppins", sans-serif) !important;
+}
+
+.price-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #eeeeee;
+    padding-top: 15px;
+    gap: 10px;
+}
+
+.price-card-price {
+    font-weight: 700 !important;
+    color: var(--bm-accent, #A57884) !important;
+    font-size: 15px !important;
+    line-height: 1.35 !important;
+    font-family: var(--bm-font-family, "Poppins", sans-serif) !important;
+}
+
+#no-results-msg {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--bm-nores-col, #888888);
+    font-size: var(--bm-nores-size, 16px);
+    display: none;
+    font-family: var(--bm-font-family, "Poppins", sans-serif);
+}
+
+@media print {
+    .bm-corner-logo,
+    .bm-phone-notice {
+        display: none !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .price-topbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .price-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .price-item-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .price-booking-box {
+        width: 100%;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .price-card-footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .accordion-header {
+        padding: 14px 20px;
+    }
+
+    .accordion-body {
+        padding: 0 16px 8px;
+    }
+
+    .price-pill,
+    .book-btn {
+        min-width: auto;
+    }
+
+    /* Keskeny képernyőn a buborék nem az ikonhoz, hanem a szövegdobozhoz
+       igazodik (annak teljes szélességében), így sem balra, sem jobbra nem
+       csúszhat ki. Ilyenkor a nyíl elmarad. */
+    .bm-phone-notice {
+        position: static;
+    }
+
+    .bm-phone-notice::after {
+        left: 0;
+        right: 0;
+        bottom: calc(100% + 8px);
+        width: auto;
+        max-width: none;
+    }
+
+    .bm-phone-notice::before {
+        display: none;
+    }
+
+    .bm-corner-logo {
+        max-width: 70px;
+        right: 6px;
+        top: 6px;
+    }
+
+    .bm-corner-logo img {
+        max-width: 70px;
+    }
+}
