@@ -2,7 +2,7 @@
 /**
  * Plugin Name: My Medio – Árlista & Orvosok
  * Description: A klinika árlistáját és orvosait jeleníti meg a weboldalon, a MyMedio rendszerből élő API-kapcsolaton keresztül – automatikus szinkronizálással és helyi mentéssel arra az esetre, ha az API épp nem elérhető. Beillesztés a [grouped_prices] (árlista) és a [doctor_list] (orvosok) shortcode-okkal; a megjelenés az admin felületen teljesen testreszabható.
- * Version: 1.4
+ * Version: 1.3
  * Author: IWY pixel
  * Author URI: https://www.iwypixel.hu/
  * Text Domain: mymedio-combined
